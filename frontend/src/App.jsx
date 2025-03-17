@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import HeaderContainer from './components/layout/HeaderContainer'
 import MenuContainer from './components/layout/MenuContainer'
 import FooterContainer from './components/layout/FooterContainer'
+import Alert from './components/Alert'
 
 function App () {
   const [menuActive, setMenuActive] = useState(false)
@@ -14,6 +15,7 @@ function App () {
       <MenuContainer menuActive={menuActive} setMenuActive={setMenuActive} />
       <Outlet />
       <FooterContainer />
+      <Alert />
     </div>
   )
 }

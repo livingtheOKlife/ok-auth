@@ -7,20 +7,26 @@ import './index.css'
 import App from './App.jsx'
 import store from './store.js'
 
+import { AlertProvider } from './context/alert/AlertContext.jsx'
+
 import HomePage from './pages/HomePage.jsx'
+import RegisterPage from './pages/RegisterPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index path='/' element={<HomePage />} />
+      <Route path='/register' element={<RegisterPage />} />
     </Route>
   )
 )
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>
+    <AlertProvider>
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>
+    </AlertProvider>
   </Provider>,
 )

@@ -3314,7 +3314,10 @@ input:invalid {
 }
 @media (prefers-color-scheme: dark) {
   .spinner .spinner-background {
-    background-image: conic-gradient(hsl(210, 96%, 40%) 33%, hsl(210, 100%, 4%) 66% 100%);
+    background-image: conic-gradient(hsl(32, 96%, 48%) 33%, hsl(210, 100%, 4%) 66% 100%);
+  }
+  .spinner .spinner-background .spinner-ball {
+    background-color: hsl(32, 96%, 48%);
   }
   .spinner .spinner-background .spinner-foreground {
     background: hsl(210, 100%, 4%);
