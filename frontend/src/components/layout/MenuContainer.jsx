@@ -22,6 +22,12 @@ function MenuContainer ({menuActive, setMenuActive}) {
             :
               <>
                 {
+                  !pathMatchRoute('/login') && <li className="menu-nav-item" onClick={() => {
+                    navigate('/login')
+                    setMenuActive(!menuActive)
+                  }}>Sign in</li>
+                }
+                {
                   !pathMatchRoute('/register') && <li className="menu-nav-item" onClick={() => {
                     navigate('/register')
                     setMenuActive(!menuActive)

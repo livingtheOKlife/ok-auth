@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa6'
 
 import AlertContext from '../context/alert/AlertContext'
@@ -103,6 +103,7 @@ function RegisterPage () {
           !isLoading ? <FormButton>Sign up</FormButton>
           : <Spinner />
         }
+        <span className="form-text">Already a member? <Link to='/login'>Sign in</Link></span>
       </FormWidget>
     </MainContainer>
   )

@@ -27,6 +27,9 @@ function HeaderContainer ({menuActive, setMenuActive}) {
             : 
               <>
                 {
+                  !pathMatchRoute('/login') && <li className="main-nav-item" onClick={() => navigate('/login')}>Sign in</li>
+                }
+                {
                   !pathMatchRoute('/register') && <li className="main-nav-item" onClick={() => navigate('/register')}>Sign up</li>
                 }
               </>

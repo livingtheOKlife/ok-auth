@@ -11,12 +11,14 @@ import { AlertProvider } from './context/alert/AlertContext.jsx'
 
 import HomePage from './pages/HomePage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index path='/' element={<HomePage />} />
       <Route path='/register' element={<RegisterPage />} />
+      <Route path='/login' element={<LoginPage />} />
     </Route>
   )
 )

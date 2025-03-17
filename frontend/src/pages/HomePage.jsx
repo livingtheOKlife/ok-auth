@@ -15,6 +15,7 @@ function HomePage () {
             <></>
           : 
             <>
+              <Link to='/login' className='btn md'>Sign in</Link>
               <Link to='/register' className='btn md'>Sign up</Link>
             </>
         }
