@@ -12,7 +12,9 @@ function HomePage () {
       <div className="buttons">
         {
           userInfo ?
-            <></>
+            <>
+              <Link to='/profile' className="btn md">View profile</Link>
+            </>
           : 
             <>
               <Link to='/login' className='btn md'>Sign in</Link>

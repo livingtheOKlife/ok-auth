@@ -9,9 +9,13 @@ import store from './store.js'
 
 import { AlertProvider } from './context/alert/AlertContext.jsx'
 
+import PrivateRoute from './components/PrivateRoute.jsx'
+
 import HomePage from './pages/HomePage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +23,9 @@ const router = createBrowserRouter(
       <Route index path='/' element={<HomePage />} />
       <Route path='/register' element={<RegisterPage />} />
       <Route path='/login' element={<LoginPage />} />
+      <Route path='' element={<PrivateRoute />}>
+        <Route path='/profile' element={<ProfilePage />} />
+      </Route>
     </Route>
   )
 )

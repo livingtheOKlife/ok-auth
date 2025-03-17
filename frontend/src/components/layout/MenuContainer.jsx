@@ -25,6 +25,7 @@ function MenuContainer ({menuActive, setMenuActive}) {
     try {
       await logout().unwrap()
       dispatch(clearCredentials())
+      setMenuActive(!menuActive)
       navigate('/')
     } catch (error) {
       setAlertActive(`Log out failed - ${error.data.message}`, 'error')
@@ -37,6 +38,9 @@ function MenuContainer ({menuActive, setMenuActive}) {
           {
             userInfo ?
               <>
+                {
+                  !pathMatchRoute('/profile') && <li className="menu-nav-item" onClick={() => navigate('/profile')}>{userInfo.name}</li>
+                }
                 <li className="menu-nav-item" onClick={() => logoutHandler()}>Logout</li>
               </>
             :

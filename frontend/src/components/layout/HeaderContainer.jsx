@@ -42,6 +42,9 @@ function HeaderContainer ({menuActive, setMenuActive}) {
           {
             userInfo ?
               <>
+                {
+                  !pathMatchRoute('/profile') && <li className="main-nav-item" onClick={() => navigate('/profile')}>{userInfo.name}</li>
+                }
                 <li className="main-nav-item" onClick={() => logoutHandler()}>Logout</li>
               </>
             : 
