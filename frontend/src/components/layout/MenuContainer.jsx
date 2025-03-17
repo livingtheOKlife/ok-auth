@@ -1,15 +1,33 @@
 import PropTypes from 'prop-types'
 
-import { useSelector } from 'react-redux'
+import { useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
+
+import AlertContext from '../../context/alert/AlertContext'
+
+import { useLogoutMutation } from '../../slices/usersApiSlice'
+import { clearCredentials } from '../../slices/authSlice'
 
 function MenuContainer ({menuActive, setMenuActive}) {
   const { userInfo } = useSelector((state) => state.auth)
+  const { setAlertActive } = useContext(AlertContext)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
+  const [logout] = useLogoutMutation()
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
       return true
+    }
+  }
+  const logoutHandler = async () => {
+    try {
+      await logout().unwrap()
+      dispatch(clearCredentials())
+      navigate('/')
+    } catch (error) {
+      setAlertActive(`Log out failed - ${error.data.message}`, 'error')
     }
   }
   return menuActive &&
@@ -18,7 +36,9 @@ function MenuContainer ({menuActive, setMenuActive}) {
         <ul className="menu-nav-list">
           {
             userInfo ?
-              <></>
+              <>
+                <li className="menu-nav-item" onClick={() => logoutHandler()}>Logout</li>
+              </>
             :
               <>
                 {
@@ -38,6 +58,11 @@ function MenuContainer ({menuActive, setMenuActive}) {
         </ul>
       </nav>
     </aside>
+}
+
+MenuContainer.propTypes = {
+  menuActive: PropTypes.bool.isRequired,
+  setMenuActive: PropTypes.func.isRequired
 }
 
 export default MenuContainer

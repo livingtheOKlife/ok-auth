@@ -1,17 +1,35 @@
 import PropTypes from 'prop-types'
 
+import { useContext } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
+import AlertContext from '../../context/alert/AlertContext'
+
+import { useLogoutMutation } from '../../slices/usersApiSlice'
+import { clearCredentials } from '../../slices/authSlice'
+
 import MenuBtn from '../MenuBtn'
-import { useSelector } from 'react-redux'
 
 function HeaderContainer ({menuActive, setMenuActive}) {
   const { userInfo } = useSelector((state) => state.auth)
+  const {setAlertActive} = useContext(AlertContext)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
+  const [logout] = useLogoutMutation()
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
       return true
+    }
+  }
+  const logoutHandler = async () => {
+    try {
+      await logout().unwrap()
+      dispatch(clearCredentials())
+      navigate('/')
+    } catch (error) {
+      setAlertActive(`Log out failed - ${error.data.message}`, 'error')
     }
   }
   return (
@@ -23,7 +41,9 @@ function HeaderContainer ({menuActive, setMenuActive}) {
         <ul className="main-nav-list">
           {
             userInfo ?
-              <></>
+              <>
+                <li className="main-nav-item" onClick={() => logoutHandler()}>Logout</li>
+              </>
             : 
               <>
                 {
