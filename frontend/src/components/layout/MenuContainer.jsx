@@ -36,6 +36,13 @@ function MenuContainer ({menuActive, setMenuActive}) {
       <nav id="menu-nav">
         <ul className="menu-nav-list">
           {
+            !pathMatchRoute('/about') &&
+              <li className="menu-nav-item" onClick={() => {
+                navigate('/about')
+                setMenuActive(!menuActive)
+              }}>About</li>
+          }
+          {
             userInfo ?
               <>
                 {

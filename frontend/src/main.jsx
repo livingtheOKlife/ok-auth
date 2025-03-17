@@ -15,7 +15,7 @@ import HomePage from './pages/HomePage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
-
+import AboutPage from './pages/AboutPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='' element={<PrivateRoute />}>
         <Route path='/profile' element={<ProfilePage />} />
       </Route>
+      <Route path='/about' element={<AboutPage />} />
     </Route>
   )
 )

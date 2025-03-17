@@ -40,6 +40,9 @@ function HeaderContainer ({menuActive, setMenuActive}) {
         </Link>
         <ul className="main-nav-list">
           {
+            !pathMatchRoute('/about') && <li className="main-nav-item" onClick={() => navigate('/about')}>About</li>
+          }
+          {
             userInfo ?
               <>
                 {

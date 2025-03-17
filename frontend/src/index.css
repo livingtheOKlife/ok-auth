@@ -59,7 +59,7 @@ input::-ms-clear {
   margin: 0 auto;
 }
 
-.packet, .form-widget > * {
+.packet, .form-widget > *, .about-page h4, .about-page .form-header .form-heading, .form-header .about-page .form-heading, .about-page p, .about-page .form-header .form-subheading, .form-header .about-page .form-subheading {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -71,11 +71,11 @@ input::-ms-clear {
   margin: 0 auto;
 }
 
-.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .home-page .buttons, .home-page, .App {
+.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .about-page .about, .about-page .about > div, .about-page, .home-page .buttons, .home-page, .App {
   display: flex;
 }
 
-.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .home-page, .App {
+.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .about-page .about, .about-page .about > div, .about-page, .home-page, .App {
   flex-direction: column;
 }
 
@@ -91,7 +91,7 @@ input::-ms-clear {
   display: inline-block;
 }
 
-.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background, .home-page {
+.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background, .about-page .about, .about-page .about > div, .about-page, .home-page {
   justify-content: center;
 }
 
@@ -107,7 +107,7 @@ input::-ms-clear {
   justify-content: end;
 }
 
-.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav, .home-page {
+.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav, .about-page .about, .about-page .about > div, .about-page, .home-page {
   align-items: center;
 }
 
@@ -139,7 +139,7 @@ input::-ms-clear {
   gap: 6px;
 }
 
-.gap-8, .btn.lg, #alert-zeta, #menu-container {
+.gap-8, .btn.lg, #alert-zeta, #menu-container, .about-page .about, .about-page .about > div {
   gap: 8px;
 }
 
@@ -159,7 +159,7 @@ input::-ms-clear {
   gap: 20px;
 }
 
-.gap-24, .home-page .buttons {
+.gap-24, .about-page, .home-page .buttons {
   gap: 24px;
 }
 
@@ -2733,7 +2733,7 @@ input:invalid {
 }
 
 .ta-center, .form-text,
-.form-text > a, .home-page p, .home-page .form-header .form-subheading, .form-header .home-page .form-subheading {
+.form-text > a, .about-page h4, .about-page .form-header .form-heading, .form-header .about-page .form-heading, .about-page p, .about-page .form-header .form-subheading, .form-header .about-page .form-subheading, .home-page p, .home-page .form-header .form-subheading, .form-header .home-page .form-subheading {
   text-align: center;
 }
 
@@ -2804,6 +2804,28 @@ input:invalid {
   }
 }
 
+.about-page > span {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.32;
+}
+.about-page > span em {
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.32;
+}
+@media screen and (min-width: 600px) {
+  .about-page > span {
+    font-size: 13.92px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-page > span {
+    font-size: 16.1472px;
+  }
+}
 #header-container {
   background-color: hsl(210, 0%, 98%);
   color: hsl(210, 100%, 4%);

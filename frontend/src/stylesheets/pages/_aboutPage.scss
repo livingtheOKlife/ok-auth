@@ -1,0 +1,22 @@
+.about-page {
+
+  @extend .flex, .flex-col, .justify-center, .align-center, .gap-24;
+  
+  > span {
+    
+    @include setBodyFont(12px);
+    
+  }
+  
+  h4, p {
+    
+    @extend .packet, .ta-center;
+    
+  }
+  .about, .about > div {
+    
+    @extend .flex, .flex-col, .justify-center, .align-center, .gap-8;
+
+  }
+
+}
