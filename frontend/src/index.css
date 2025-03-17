@@ -53,7 +53,7 @@ input::-ms-clear {
   margin: 0 auto;
 }
 
-.widget, .form-widget {
+.widget, .form-widget, .home-page p, .home-page .form-header .form-subheading, .form-header .home-page .form-subheading {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
@@ -71,11 +71,11 @@ input::-ms-clear {
   margin: 0 auto;
 }
 
-.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .App {
+.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .home-page .buttons, .home-page, .App {
   display: flex;
 }
 
-.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .App {
+.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .home-page, .App {
   flex-direction: column;
 }
 
@@ -91,7 +91,7 @@ input::-ms-clear {
   display: inline-block;
 }
 
-.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background {
+.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background, .home-page {
   justify-content: center;
 }
 
@@ -107,7 +107,7 @@ input::-ms-clear {
   justify-content: end;
 }
 
-.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav {
+.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav, .home-page {
   align-items: center;
 }
 
@@ -159,7 +159,7 @@ input::-ms-clear {
   gap: 20px;
 }
 
-.gap-24 {
+.gap-24, .home-page .buttons {
   gap: 24px;
 }
 
@@ -167,7 +167,7 @@ input::-ms-clear {
   gap: 28px;
 }
 
-.gap-32 {
+.gap-32, .home-page {
   gap: 32px;
 }
 
@@ -1726,7 +1726,7 @@ input::-ms-clear {
   margin-top: 32px;
 }
 
-.mb-32 {
+.mb-32, .home-page p, .home-page .form-header .form-subheading, .form-header .home-page .form-subheading {
   margin-bottom: 32px;
 }
 
@@ -2733,7 +2733,7 @@ input:invalid {
 }
 
 .ta-center, .form-text,
-.form-text > a {
+.form-text > a, .home-page p, .home-page .form-header .form-subheading, .form-header .home-page .form-subheading {
   text-align: center;
 }
 
@@ -3688,6 +3688,7 @@ input:invalid {
   .btn {
     background-color: hsl(32, 96%, 48%);
     color: hsl(210, 0%, 98%);
+    font-weight: 600;
   }
   .btn h2, .btn h3, .btn h4, .btn .form-header .form-heading, .form-header .btn .form-heading, .btn h5, .btn h6 {
     color: hsl(210, 0%, 98%);
@@ -3700,6 +3701,9 @@ input:invalid {
   }
   .btn input::placeholder {
     color: rgba(255, 255, 255, 0.24);
+  }
+  .btn:hover {
+    font-weight: 600;
   }
 }
 .btn:disabled {

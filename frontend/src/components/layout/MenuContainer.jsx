@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
 
 function MenuContainer ({menuActive, setMenuActive}) {
-  return (
-    <aside id="menu-container" className={menuActive ? 'active': ''}>
-      MenuContainer
+  return menuActive &&
+    <aside id="menu-container">
+      <nav id="menu-nav">
+        <ul className="menu-nav-list"></ul>
+      </nav>
     </aside>
-  )
 }
 
 export default MenuContainer

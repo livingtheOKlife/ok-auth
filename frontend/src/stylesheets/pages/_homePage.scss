@@ -1,0 +1,17 @@
+.home-page {
+
+  @extend .flex, .flex-col, .justify-center, .align-center, .gap-32;
+
+  p {
+
+    @extend .widget, .mb-32, .ta-center;
+
+  }
+
+  .buttons {
+
+    @extend .flex, .gap-24;
+
+  }
+
+}
