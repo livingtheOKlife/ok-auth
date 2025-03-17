@@ -1,0 +1,64 @@
+#header-container {
+
+  @extend .container;
+  @include setBackgroundColor($light);
+
+  #main-nav {
+
+    @extend .wrapper, .flex, .justify-between, .align-center, .p-8;
+
+    .logo {
+
+      @extend .p-8;
+      @include setLogoFont(18px);
+      line-height: 1;
+
+    }
+
+    .main-nav-list {
+
+      @extend .align-center, .gap-4;
+      display: none;
+
+      .main-nav-item {
+        
+        @extend .p-8;
+        @include setMenuFont(14px);
+        transition: all 0.08s;
+        cursor: pointer;
+
+      }
+
+    }
+
+    .menu-btn {
+
+      @extend .mr-2;
+
+    }
+
+    @media screen and (min-width: 600px) {
+      
+      .main-nav-list {
+
+        display: flex;
+
+      }
+
+      .menu-btn {
+
+        display: none;
+
+      }
+      
+    }
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    @include setBackgroundColor($dark);
+
+  }
+
+}

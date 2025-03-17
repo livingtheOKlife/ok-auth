@@ -1,0 +1,86 @@
+#menu-container {
+
+  @extend .absolute, .flex, .flex-col, .gap-8;
+  @include setBackgroundColor($light);
+  top: 56px;
+  right: 0;
+  border: 1px solid rgb(0, 0, 0, 0.16);
+  border-radius: 8px 0 0 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 2px 8px;
+  animation: menu 0.16s forwards ease-out;
+  
+  #menu-nav {
+    
+    @extend .flex, .flex-col, .w-100;
+    
+    .menu-nav-list {
+      
+      @extend .flex, .flex-col, .align-end, .w-100;
+
+      .menu-nav-item {
+
+        @extend .relative, .w-100, .px-16, .py-12;
+        @include setMenuFont(12px);
+        padding-left: 48px;
+        text-align: right;
+        transition: all 0.08s ease-in-out;
+        cursor: pointer;
+        
+        &:not(:last-of-type)::after {
+
+          content: '';
+          @extend .absolute, .h-1;
+          bottom: 0;
+          left: 16px;
+          right: 16px;
+          background: rgb(0, 0, 0, 0.16);
+          
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  @media (prefers-color-scheme: dark) {
+
+    @include setBackgroundColor($dark);
+
+    #menu-nav {
+      
+      .menu-nav-list {
+        
+        .menu-nav-item {
+          
+          &:not(:last-of-type)::after {
+            
+            background: rgb(255, 255, 255, 0.08);
+            
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @keyframes menu {
+
+    from {
+
+      transform: translateX(141px);
+
+    }
+
+    to {
+
+      transform: translate(0);
+
+    }
+
+  }
+
+}

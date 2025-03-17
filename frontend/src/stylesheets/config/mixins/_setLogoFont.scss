@@ -1,0 +1,26 @@
+@mixin setLogoFont ($size) {
+
+  font-family: $brand;
+  font-size: $size;
+  font-weight: 600;
+  letter-spacing: 1;
+  line-height: 1;
+  
+  em {
+    
+    text-transform: uppercase;
+    color: $primary;
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    em {
+
+      color: $secondary;
+
+    }
+
+  }
+
+}
