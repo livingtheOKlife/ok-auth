@@ -1,0 +1,17 @@
+.page-not-found-page {
+
+  @extend .flex, .flex-col, .justify-center, .align-center, .gap-24;
+
+  span {
+
+    @include setBodyFont(14px);
+
+  }
+
+  a {
+
+    @extend .mt-24;
+
+  }
+
+}

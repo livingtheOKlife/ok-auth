@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import './index.css'
@@ -16,6 +16,7 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import PageNotFoundPage from './pages/PageNotFoundPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,8 @@ const router = createBrowserRouter(
         <Route path='/profile' element={<ProfilePage />} />
       </Route>
       <Route path='/about' element={<AboutPage />} />
+      <Route path='/page-not-found' element={<PageNotFoundPage />} />
+      <Route path='/*' element={<Navigate to="/page-not-found" replace />} />
     </Route>
   )
 )

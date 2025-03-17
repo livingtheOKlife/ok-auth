@@ -71,11 +71,11 @@ input::-ms-clear {
   margin: 0 auto;
 }
 
-.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .about-page .about, .about-page .about > div, .about-page, .home-page .buttons, .home-page, .App {
+.flex, #main-container, .tags .tag, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-control, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, #header-container #main-nav, .page-not-found-page, .about-page .about, .about-page .about > div, .about-page, .home-page .buttons, .home-page, .App {
   display: flex;
 }
 
-.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .about-page .about, .about-page .about > div, .about-page, .home-page, .App {
+.flex-col, .menu-btn, .form-control, .form-header, .form-widget, #menu-container #menu-nav .menu-nav-list, #menu-container #menu-nav, #menu-container, .page-not-found-page, .about-page .about, .about-page .about > div, .about-page, .home-page, .App {
   flex-direction: column;
 }
 
@@ -91,7 +91,7 @@ input::-ms-clear {
   display: inline-block;
 }
 
-.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background, .about-page .about, .about-page .about > div, .about-page, .home-page {
+.justify-center, .menu-btn, #alert-zeta .alert-btn, .spinner .spinner-background, .page-not-found-page, .about-page .about, .about-page .about > div, .about-page, .home-page {
   justify-content: center;
 }
 
@@ -107,7 +107,7 @@ input::-ms-clear {
   justify-content: end;
 }
 
-.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav, .about-page .about, .about-page .about > div, .about-page, .home-page {
+.align-center, .tags, .input-btn, .btn, .menu-btn, #alert-zeta .alert-btn, #alert-zeta, .spinner .spinner-background, .form-header, .form-widget, #footer-container #footer-wrapper #brand, #footer-container #footer-wrapper, #header-container #main-nav .main-nav-list, #header-container #main-nav, .page-not-found-page, .about-page .about, .about-page .about > div, .about-page, .home-page {
   align-items: center;
 }
 
@@ -159,7 +159,7 @@ input::-ms-clear {
   gap: 20px;
 }
 
-.gap-24, .about-page, .home-page .buttons {
+.gap-24, .page-not-found-page, .about-page, .home-page .buttons {
   gap: 24px;
 }
 
@@ -1662,7 +1662,7 @@ input::-ms-clear {
   margin-right: 24px;
 }
 
-.mt-24 {
+.mt-24, .page-not-found-page a {
   margin-top: 24px;
 }
 
@@ -2824,6 +2824,28 @@ input:invalid {
 @media screen and (min-width: 768px) {
   .about-page > span {
     font-size: 16.1472px;
+  }
+}
+.page-not-found-page span {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.32;
+}
+.page-not-found-page span em {
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.32;
+}
+@media screen and (min-width: 600px) {
+  .page-not-found-page span {
+    font-size: 16.24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page-not-found-page span {
+    font-size: 18.8384px;
   }
 }
 #header-container {
