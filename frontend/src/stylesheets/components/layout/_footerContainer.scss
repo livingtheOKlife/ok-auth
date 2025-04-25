@@ -2,6 +2,7 @@
 
   @extend .container;
   @include setBackgroundColor($dark);
+  z-index: 5;
 
   #footer-wrapper {
 

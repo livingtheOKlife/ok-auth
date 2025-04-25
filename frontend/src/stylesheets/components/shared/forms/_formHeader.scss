@@ -1,6 +1,6 @@
 .form-header {
     
-  @extend .flex, .flex-col, .align-center, .gap-4, .mb-8;
+  @extend .flex, .flex-col, .align-center, .gap-12, .mb-8;
   
   .form-heading {
     
@@ -10,7 +10,7 @@
   
   .form-subheading {
     
-    @extend p;
+    @extend p, .ta-center;
     
   }
   

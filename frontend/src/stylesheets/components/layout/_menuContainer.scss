@@ -1,85 +1,143 @@
 #menu-container {
 
-  @extend .absolute, .flex, .flex-col, .gap-8;
+  @extend .absolute, .p-16;
   @include setBackgroundColor($light);
   top: 56px;
+  left: 0px;
+  bottom: 18px;
   right: 0;
-  border: 1px solid rgb(0, 0, 0, 0.16);
-  border-radius: 8px 0 0 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 2px 8px;
-  animation: menu 0.16s forwards ease-out;
-  
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
+  animation: appear-down 0.64s forwards ease-out;
+  z-index: 4;
+
   #menu-nav {
-    
-    @extend .flex, .flex-col, .w-100;
-    
+
+    @extend .flex, .flex-col, .justify-between, .h-100, .w-100, .pt-16;
+
     .menu-nav-list {
-      
-      @extend .flex, .flex-col, .align-end, .w-100;
 
-      .menu-nav-item {
-
-        @extend .relative, .w-100, .px-16, .py-12;
-        @include setMenuFont(12px);
-        padding-left: 48px;
-        text-align: right;
-        transition: all 0.08s ease-in-out;
-        cursor: pointer;
-        
-        &:not(:last-of-type)::after {
-
-          content: '';
-          @extend .absolute, .h-1;
-          bottom: 0;
-          left: 16px;
-          right: 16px;
-          background: rgb(0, 0, 0, 0.16);
-          
-        }
+      @extend .flex, .flex-col, .align-center, .gap-12, .pb-32, .y-scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    
+      &::-webkit-scrollbar {
+    
+        display: none;
         
       }
       
-    }
-    
-  }
-  
-  @media (prefers-color-scheme: dark) {
+      .menu-nav-item {
 
-    @include setBackgroundColor($dark);
-
-    #menu-nav {
-      
-      .menu-nav-list {
+        @extend .piece, .flex, .justify-center, .align-center, .gap-8, .py-12, .br-8;
+        @include setMenuFont(16px);
+        background-color: $light;
+        opacity: 0;
+        transition: all 0.08s ease-in-out;
+        animation: fade-in 1.28s forwards ease-in-out;
+        animation-delay: 0.32s;
+        cursor: pointer;
         
-        .menu-nav-item {
+        svg {
           
-          &:not(:last-of-type)::after {
-            
-            background: rgb(255, 255, 255, 0.08);
-            
+          @include setMenuFont(16px);
+          color: rgb(0, 0, 0, 0.72);
+          transition: all 0.08s ease-in-out;
+
+        }
+
+        &:hover {
+          
+          background-color: $primary;
+          color: $light;
+
+          svg {
+
+            color: $light;
+
           }
 
         }
 
+        @media (prefers-color-scheme: dark) {
+
+          background-color: $dark;
+          color: $light;
+
+          svg {
+
+            color: rgb(255, 255, 255, 0.72);
+
+          }
+
+          &:hover {
+
+            background-color: $secondary;
+
+          }
+          
+        }
+
+      }
+
+    }
+
+    button {
+
+      @extend .piece, .flex, .justify-center, .align-center, .gap-8, .py-12, .br-8, .mt-16, .mb-32;
+      @include setMenuFont(16px);
+      background-color: $light;
+      opacity: 0;
+      transition: all 0.08s ease-in-out;
+      animation: fade-in 1.28s forwards ease-in-out;
+      animation-delay: 0.32s;
+      
+      svg {
+        
+        @include setMenuFont(14px);
+        color: rgb(0, 0, 0, 0.72);
+        transition: all 0.08s ease-in-out;
+
+      }
+
+      &:hover {
+        
+        background-color: $primary;
+        color: $light;
+
+        svg {
+
+          color: $light;
+
+        }
+
+      }
+
+      @media (prefers-color-scheme: dark) {
+
+        background-color: $dark;
+        color: $light;
+
+        svg {
+
+          color: rgb(255, 255, 255, 0.72);
+
+        }
+
+        &:hover {
+
+          background-color: $secondary;
+
+        }
+        
       }
 
     }
 
   }
 
-  @keyframes menu {
+  @media (prefers-color-scheme: dark) {
 
-    from {
-
-      transform: translateX(141px);
-
-    }
-
-    to {
-
-      transform: translate(0);
-
-    }
+    @include setBackgroundColor($dark);
 
   }
 

@@ -41,13 +41,7 @@
     
     @media (prefers-color-scheme: dark) {
       
-      background-image: conic-gradient($secondary 33%, $dark 66% 100%);
-
-      .spinner-ball {
-
-        background-color: $secondary;
-
-      }
+      background-image: conic-gradient($primary 33%, $dark 66% 100%);
 
       .spinner-foreground {
         

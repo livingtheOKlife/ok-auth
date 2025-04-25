@@ -2,6 +2,8 @@
 
   @extend .container;
   @include setBackgroundColor($light);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
+  z-index: 5;
 
   #main-nav {
 

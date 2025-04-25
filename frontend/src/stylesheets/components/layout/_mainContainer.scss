@@ -1,6 +1,7 @@
 #main-container {
 
-  @extend .container, .h-100, .y-scroll;
+  @extend .container, .h-100, .p-24, .y-scroll;
+  z-index: 1;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -13,6 +14,18 @@
   .main-wrapper {
 
     @extend .wrapper;
+
+    @for $i from 1 through 1000 {
+    
+      & > *:nth-child(#{$i}) {
+    
+        opacity: 0;
+        animation: fade-in 0.64s forwards ease-in-out;
+        animation-delay: calc(#{$i} * 0.02s + 0.32s);
+    
+      }
+    
+    }
 
   }
 
